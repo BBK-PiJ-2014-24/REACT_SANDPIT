@@ -20,6 +20,7 @@ const Controlled = () => {
             <input type='text' value={inputText} onChange={handleInput}/>
             <button onClick={handleSubmit}>Submit</button>
             <h2>Input: {inputText}</h2>
+            <hr style={{borderColor:'green'}} />
         </form>
     )
 
