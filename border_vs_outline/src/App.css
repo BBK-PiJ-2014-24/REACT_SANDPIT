@@ -1,0 +1,24 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
+}
+
+/* Borders are contained within the Box */
+.border {
+  background: orange;
+  border: 10px solid red;
+}
+
+/* Outlines are NOT contained within the Box */
+.outline {
+  background: greenyellow;
+  outline: 10px solid red;
+}
