@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+}
+
+
+.box-container {
+  margin:50px auto;
+  width: 500px;
+  height: 800px;
+  background: #888;
+  display: flex;
+}
+
+.box {
+  background: red;
+  width: 50px;
+  height: 50px;
+  margin-top: auto; /* Shift the box to bottom with all spare space laid on top of it */
+  margin-left: auto; /* Shift the box to right with all spare space pushed to the left */
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
