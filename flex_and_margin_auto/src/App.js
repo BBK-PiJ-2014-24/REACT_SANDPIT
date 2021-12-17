@@ -7,6 +7,9 @@ function App() {
         <div className="box">
             Box
         </div>
+        <div className="box2">
+          Box2
+        </div>
       </div>
     </div>
   );
