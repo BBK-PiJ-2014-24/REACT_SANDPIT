@@ -1,0 +1,98 @@
+.form {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: form-opening 1s;
+}
+.form-container {
+  height: 400px;
+  width: 350px;
+  background: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.exit-form {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.25rem;
+  padding: 3px 5px;
+  margin-top: 4px;
+  margin-right: 4px;
+  color: teal;
+  border: 1px solid teal;
+}
+
+.exit-form:hover {
+  background-color: teal;
+  color: whitesmoke;
+}
+
+.form-container h1 {
+  color: teal;
+}
+
+.form-body {
+  padding: 10px;
+}
+
+.form-body button {
+  background-color: #85cdd6;
+  color: whitesmoke;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.form-item {
+  padding: 10px;
+}
+
+.form-item label {
+  display: block;
+  padding: 5px 0;
+  margin-right: 5px;
+  text-align: left;
+  color: teal;
+}
+
+.form-item input {
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px 0;
+  border: 2px solid #85cdd6;
+}
+
+.form-item input:focus {
+  outline: none;
+  border: 2px solid teal;
+}
+
+.checkbox-container {
+  color: teal;
+  text-align: right;
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+input#checkbox {
+  width: 1rem;
+  height: 1rem;
+}
+
+@keyframes form-opening {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
