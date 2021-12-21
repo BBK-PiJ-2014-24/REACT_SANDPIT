@@ -1,0 +1,22 @@
+.trip-list ul {
+    border: 1px solid red;
+    width: 480px;
+    margin: 20px auto;
+    padding-inline-start: 0px;
+}
+
+.trip-list li {
+    margin: 25px;
+    list-style-type: none;    
+    /* border: 1px solid #e4e4e4; */
+    border: none;
+    box-shadow:5px 5px 6px rgba(0,0,0,0.05);
+    /* border-radius: 5px; */
+    padding: 10px 20px;
+    padding-inline-start: 0px; /*Key for getting rid of the inset on the list*/
+    text-align: left;
+}
+.trip-list li h3,
+.trip-list li p {
+    padding: 5px 15px;
+} 
