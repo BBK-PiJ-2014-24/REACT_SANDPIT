@@ -22,7 +22,7 @@ function Sidebar() {
                 </Link>
             </div>
             {/* Sidebar Drawer */}
-            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+            <nav className={sidebar ? 'nav-menu open' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={toggleSidebar}>
                     <li className='navbar-toggle'>
                         <Link to='#' className='menu-bars' >
@@ -32,7 +32,7 @@ function Sidebar() {
                     {SidebarData.map((item, index) => ( 
                         <li key={index} className={item.cName}>
                             {/* The Link will Reference the list of Routes */}
-                            <NavLink to={item.path} activeClassName='active' > {/* activeClassName is not working yet in v6 */}
+                            <NavLink to={item.path}  > 
                                 {item.icon}
                                 <span>{item.title}</span>
                             </NavLink>

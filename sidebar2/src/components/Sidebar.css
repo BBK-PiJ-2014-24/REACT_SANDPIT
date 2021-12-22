@@ -18,7 +18,7 @@
   left: -100%;
 }
 
-.nav-menu.active{
+.nav-menu.open{
     left: 0;
 }
 
@@ -46,7 +46,7 @@
 
 .active span {
   color:coral;
-  /* text-decoration: underline; */
+  text-decoration: underline;
 }
 
 .nav-text {
