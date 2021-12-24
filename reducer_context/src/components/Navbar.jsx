@@ -1,14 +1,16 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {NavLink} from 'react-router-dom'
+import HeaderContext from '../contexts/headerColor/HeaderContext'
 import NavbarData from '../assets/NavbarData';
 
 import './Navbar.css';
 
 function Navbar() {
 
-    console.log(NavbarData)
+    const headerContext = useContext(HeaderContext);
+
     return (
-        <nav className='navbar-container'>
+        <nav className='navbar-container' style={{background: headerContext.color}}>
             <div className='logo'>Logo</div>
             <ul className='nav-list'>
                 {NavbarData.map((item, index)=>(
