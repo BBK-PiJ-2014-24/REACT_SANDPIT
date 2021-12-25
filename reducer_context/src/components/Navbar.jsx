@@ -15,7 +15,7 @@ function Navbar() {
             <ul className='nav-list'>
                 {NavbarData.map((item, index)=>(
                     <li key={index} className='nav-item'>
-                        <NavLink to={item.path}>{item.title}</NavLink>
+                        <NavLink to={item.path} style={{color: headerContext.color, filter: 'hue-rotate(180deg)', brightness: '250%'}}>{item.title}</NavLink>
                     </li>
                 ))}
             </ul>
