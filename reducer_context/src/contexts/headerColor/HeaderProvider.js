@@ -7,13 +7,16 @@ import {CHANGE_COLOR,
 
 const HeaderProvider = (props) => {
 
+    // 1. Set up an object of GLOBAL STATE VARIABLES
     const initialState = {
-        color: '#58249c',
+        color: '#58249c', // a different to the palette
         theme: 'light'
       }
 
-    const [state, dispatch] = useReducer(HeaderReducer, initialState);
+    // 2. Bind the global state variables to the useReducer
+      const [state, dispatch] = useReducer(HeaderReducer, initialState);
 
+    // 3. Set up f() that expose state management to the app components  
     const changeColor = (color) => {
         dispatch({type: CHANGE_COLOR, payload: color})
     }
@@ -22,7 +25,7 @@ const HeaderProvider = (props) => {
         dispatch({type: CHANGE_THEME })
     }
 
-
+    // 4. return the context's provider, which will be wrapped around the app component
     return (
         <HeaderContext.Provider value={{...state, changeColor, changeBackgroundTheme}} >
             {props.children}

@@ -10,7 +10,7 @@
 }
 
 .theme-container {
-  display: inline-block;
+  display: inline-block;  /* puts the divs in a row */
   margin-left: 30px;
 }
 
