@@ -13,6 +13,11 @@
   margin-left: 15px;
   font-size: 1.5rem;
   font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+
+.logo:hover{
+  transform: rotate(-10deg);
 }
 
 .nav-list {
@@ -28,10 +33,13 @@
   list-style-type: none;
   font-weight:500;
   font-size:1.2rem;
+  transition: all 1s ; /* Allow the hover to fade in*/
 }
 
 .nav-item:hover {
   font-weight:bold;
+  text-decoration: underline;
+  filter: brightness(200%);
 }
 
 /* The active class is automatically created when NavLink is clicked */
