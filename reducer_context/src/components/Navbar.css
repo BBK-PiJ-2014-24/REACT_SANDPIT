@@ -46,6 +46,7 @@
 .active {
   color: red;
   text-decoration: underline;
+  opacity: 0.8;
 }
 
 /* NavLinks turn into <a> tags */
