@@ -1,0 +1,30 @@
+.navbar-container {
+  height: 80px;
+  width: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: blue;
+  color: red;
+  padding: 0 30px;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  color: burlywood;
+}
+
+.navbar-container > ul {
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-container li {
+    padding: 0 15px;
+    color: white;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.navbar-container li:first-letter {
+    text-transform: uppercase;
+}
