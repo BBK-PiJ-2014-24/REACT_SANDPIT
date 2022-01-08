@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './Page.css'
 import {Button, Link, animateScroll as scroll} from 'react-scroll'
 
@@ -27,6 +27,34 @@ function Page({id, color, upPage, downPage}) {
             delay: 100,    
         })
     }
+
+    const scrollMove = () => {
+
+    }
+
+    let oldValue=0;
+    useEffect(()=>{
+            window.addEventListener('scroll', function(e){
+            // console.log('hello');    
+            let newValue=0;
+
+            // Get the new Value
+            newValue = window.pageYOffset;
+            console.log('new value', newValue)
+            console.log(' old value', oldValue)
+        
+            //Subtract the two and conclude
+            if(oldValue - newValue < 0){
+                console.log("Up");
+            } else if(oldValue - newValue > 0){
+                console.log("Down");
+            }
+        
+            // Update the old value
+            oldValue = newValue;
+            console.log(' old value', oldValue)
+        })
+    }, [])
 
 
     // const handleClickToSection = () => {
