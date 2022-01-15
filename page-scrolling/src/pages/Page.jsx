@@ -1,21 +1,25 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useRef} from 'react'
 import './Page.css'
-import {Button, Link, animateScroll as scroll} from 'react-scroll'
+// React-router Links take the user to different pages. But Scroll LINKS take you
+// to different parts of the page. This is the best way to scroll to sections in the page 
+// as the scrollTo() does not seem to work.
+import {Link, animateScroll as scroll} from 'react-scroll' 
 
-function Page({id, color, upPage, downPage}) {
+function Page({id, color, upPage, downPage, showNav, toggleNav}) {
 
+    // Inline style f() to dynamically receive background and font color from props ... nothing to do with Scroll
+    //-----------------------------------------------------------------------------
     const style = {
         background: `${color}`,
-        // color: `${color}`,
-        // filter: 'hue-rotate(180deg)'
     }
 
     const styleH1 = {
         color: `${color}`,
         filter: 'invert(100%)',
-        
     }
-    
+
+    // handle click to scroll to the top and bottom of site
+    // ---------------------------------
     const handleClickToTop = () => {
         scroll.scrollToTop()
     }
@@ -28,35 +32,50 @@ function Page({id, color, upPage, downPage}) {
         })
     }
 
-    const scrollMove = () => {
+    // Event Listener to detect an U for controlling when to show the Navbar
+    // ---------------------------------------------------------------------
+    const oldValueRef= useRef(0); // ensure value is not lost across renders, BUT EITHER METHOD WORKS
+    let oldValue =0;
 
-    }
-
-    let oldValue=0;
+    let newValue=0;
+    console.log('scroll height', window.scrollY)
+    console.log('navToggle', showNav)    
+    // Check if on different page to activate nav toggle
     useEffect(()=>{
             window.addEventListener('scroll', function(e){
-            // console.log('hello');    
-            let newValue=0;
+            // Keep Nav showing on first page of scroll         
+            if(window.scrollY <= 700){
+                    toggleNav(true); // turn Nav back on
+            } else {    
+                // Get the new px height
+                newValue = window.pageYOffset;
 
-            // Get the new Value
-            newValue = window.pageYOffset;
-            console.log('new value', newValue)
-            console.log(' old value', oldValue)
-        
-            //Subtract the two and conclude
-            if(oldValue - newValue < 0){
-                console.log("Up");
-            } else if(oldValue - newValue > 0){
-                console.log("Down");
+                // Determine if scroll up
+                if(newValue < oldValueRef.current ){
+                    console.log("Up");
+                    console.log('new value', newValue)
+                    console.log(' old value', oldValueRef.current)
+                    console.log(' old value Ref', oldValue)
+                    console.log('Up showNav', showNav)
+                    toggleNav(true); // turn Nav back on
+                    console.log('UpshowNav', showNav)
+                } else if(newValue >= oldValueRef.current && showNav){
+                    console.log("Down");
+                    console.log('new value', newValue)
+                    console.log(' old value', oldValueRef.current)
+                    console.log(' old value Ref', oldValue)
+                    console.log('Down showNav', showNav)
+                    toggleNav(false); // turn off Nav
+                    console.log('Down showNav', showNav)
+                }
+            
+                // Update the old value
+                oldValueRef.current = newValue;
+                oldValue = newValue;                
             }
-        
-            // Update the old value
-            oldValue = newValue;
-            console.log(' old value', oldValue)
-        })
-    }, [])
-
-
+        })},[])
+            
+    // Ignore - ScrollTo() as does not seem to work..    
     // const handleClickToSection = () => {
     //     console.log('helo')
     //     scroll.scrollTo("team", {  
