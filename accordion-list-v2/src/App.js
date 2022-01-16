@@ -1,10 +1,10 @@
 import './App.css';
-import Accordion from './components/Accordion';
+import AccordionList from './components/AccordionList';
 
 function App() {
   return (
     <div className="App">
-      <Accordion />
+      <AccordionList />
     </div>
   );
 }
